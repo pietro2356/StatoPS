@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from "@angular/common/http";
+import { ProntosoccorsoComponent } from './prontosoccorso/prontosoccorso.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProntosoccorsoComponent
   ],
   imports: [
     BrowserModule,
