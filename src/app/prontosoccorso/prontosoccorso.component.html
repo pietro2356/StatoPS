@@ -1,6 +1,61 @@
-<!-- <p>prontosoccorso works!</p>
-<div>
-    <p *ngFor="let item of $data">
-        {{item | json}}
-    </p>
-</div> -->
+<div class="container" *ngIf="$data?.length == 11">
+    <mat-card class="ps-card" *ngFor="let ps of $data" >
+        <mat-card-header>
+            <mat-card-title>{{ps.ospedale}}</mat-card-title>
+            <mat-card-subtitle>{{ps.codice}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                {{ps.descrizione}}
+            </p>
+
+            <table class="tg">
+                <thead>
+                    <tr>
+                        <th class="tg-wa1i">+</th>
+                        <th class="tg-fymr bianco">Bianco</th>
+                        <th class="tg-1wig verde">Verde</th>
+                        <th class="tg-1wig azzurro">Azzurro</th>
+                        <th class="tg-1wig giallo">Giallo</th>
+                        <th class="tg-1wig arancio">Arancio</th>
+                        <th class="tg-1wig rosso">Rosso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tg-wa1i">Attesa</td>
+                        <td class="tg-5frq">{{ps.attesa.bianco}}</td>
+                        <td class="tg-5frq">{{ps.attesa.verde}}</td>
+                        <td class="tg-5frq">{{ps.attesa.azzurro}}</td>
+                        <td class="tg-5frq">{{ps.attesa.giallo}}</td>
+                        <td class="tg-5frq">{{ps.attesa.arancio}}</td>
+                        <td class="tg-5frq">{{ps.attesa.rosso}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-wa1i">Osservazione</td>
+                        <td class="tg-5frq">{{ps.osservazione.bianco}}</td>
+                        <td class="tg-5frq">{{ps.osservazione.verde}}</td>
+                        <td class="tg-5frq">{{ps.osservazione.azzurro}}</td>
+                        <td class="tg-5frq">{{ps.osservazione.giallo}}</td>
+                        <td class="tg-5frq">{{ps.osservazione.arancio}}</td>
+                        <td class="tg-5frq">{{ps.osservazione.rosso}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-wa1i">Ambulatorio</td>
+                        <td class="tg-5frq">{{ps.ambulatorio.bianco}}</td>
+                        <td class="tg-5frq">{{ps.ambulatorio.verde}}</td>
+                        <td class="tg-5frq">{{ps.ambulatorio.azzurro}}</td>
+                        <td class="tg-5frq">{{ps.ambulatorio.giallo}}</td>
+                        <td class="tg-5frq">{{ps.ambulatorio.arancio}}</td>
+                        <td class="tg-5frq">{{ps.ambulatorio.rosso}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                {{ps.messaggio}}
+            </p>
+
+        </mat-card-content>
+    </mat-card>
+</div>
