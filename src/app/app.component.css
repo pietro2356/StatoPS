@@ -1,6 +1,8 @@
+.title{
+    text-align: center;
+    padding-top: 1%;
+}
+
 .header{
     color: #E63648;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }

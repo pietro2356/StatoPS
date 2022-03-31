@@ -1,15 +1,64 @@
 <div class="container" *ngIf="$data?.length == 11">
     <mat-card class="ps-card" *ngFor="let ps of $data" >
         <mat-card-header>
-            <mat-card-title>{{ps.ospedale}}</mat-card-title>
-            <mat-card-subtitle>{{ps.codice}}</mat-card-subtitle>
+            <mat-card-title>
+                <h3>{{ps.descrizione}}</h3>
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{ps.codice}}
+            </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-            <p>
-                {{ps.descrizione}}
-            </p>
-
             <table class="tg">
+                <thead>
+                  <tr>
+                    <th class="tg-t6k2">Codice</th>
+                    <th class="tg-fymr">Attesa </th>
+                    <th class="tg-fymr">Osservazione</th>
+                    <th class="tg-fymr">Ambulatorio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tg-uzvj rosso">Rosso</td>
+                    <td class="tg-8bgf">{{ps.attesa.rosso}}</td>
+                    <td class="tg-8bgf">{{ps.osservazione.rosso}}</td>
+                    <td class="tg-8bgf">{{ps.ambulatorio.rosso}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-uzvj arancio">Arancio</td>
+                    <td class="tg-8bgf">{{ps.attesa.arancio}}</td>
+                    <td class="tg-8bgf">{{ps.osservazione.arancio}}</td>
+                    <td class="tg-8bgf">{{ps.ambulatorio.arancio}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-uzvj giallo">Giallo</td>
+                    <td class="tg-8bgf">{{ps.attesa.giallo}}</td>
+                    <td class="tg-8bgf">{{ps.osservazione.giallo}}</td>
+                    <td class="tg-8bgf">{{ps.ambulatorio.giallo}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-uzvj azzurro">Azzurro</td>
+                    <td class="tg-8bgf">{{ps.attesa.azzurro}}</td>
+                    <td class="tg-8bgf">{{ps.osservazione.azzurro}}</td>
+                    <td class="tg-8bgf">{{ps.ambulatorio.azzurro}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-uzvj verde">Verde</td>
+                    <td class="tg-8bgf">{{ps.attesa.verde}}</td>
+                    <td class="tg-8bgf">{{ps.osservazione.verde}}</td>
+                    <td class="tg-8bgf">{{ps.ambulatorio.verde}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-uzvj bianco">Bianco</td>
+                    <td class="tg-8bgf">{{ps.attesa.bianco}}</td>
+                    <td class="tg-8bgf">{{ps.osservazione.bianco}}</td>
+                    <td class="tg-8bgf">{{ps.ambulatorio.bianco}}</td>
+                  </tr>
+                </tbody>
+                </table>
+
+            <!-- <table class="tg">
                 <thead>
                     <tr>
                         <th class="tg-wa1i">+</th>
@@ -50,11 +99,7 @@
                         <td class="tg-5frq">{{ps.ambulatorio.rosso}}</td>
                     </tr>
                 </tbody>
-            </table>
-
-            <p>
-                {{ps.messaggio}}
-            </p>
+            </table> -->
 
         </mat-card-content>
     </mat-card>
