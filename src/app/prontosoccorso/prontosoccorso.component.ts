@@ -21,10 +21,6 @@ export class ProntosoccorsoComponent implements OnInit{
       item.forEach((res:any) => {
         this.$data?.push(res.risposta.pronto_soccorso.reparto)
       })
-      // data.forEach((item: any) => {
-      //   // console.log(item);
-      //   this.$data?.push(item.risposta.pronto_soccorso.reparto)
-      // })
     })
     console.log(this.$data);
     
