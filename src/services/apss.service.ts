@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 export class ApssService {
 
   ApssApiUrl: string = "https://servizi.apss.tn.it/opendata/STATOPS001.json";
+
+  
 
   constructor(public http: HttpClient) { }
 

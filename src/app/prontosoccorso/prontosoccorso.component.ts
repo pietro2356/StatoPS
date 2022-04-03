@@ -1,5 +1,5 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ProntoSoccorso, Reparto, Risposta } from 'src/models/statops';
+import { Component, OnInit } from '@angular/core';
+import { Reparto } from 'src/models/statops';
 import { ApssService } from 'src/services/apss.service';
 
 @Component({
@@ -11,6 +11,7 @@ export class ProntosoccorsoComponent implements OnInit{
 
   $data?: Reparto[] = [];
   load: boolean = false;
+  timeStamp: string = "";
 
 
   constructor(private apss: ApssService) { }
@@ -18,12 +19,12 @@ export class ProntosoccorsoComponent implements OnInit{
 
   ngOnInit(): void {
     this.apss.getStatoPS().forEach(item => {
+      this.timeStamp = item[0].risposta.timestamp;
+      
       item.forEach((res:any) => {
         this.$data?.push(res.risposta.pronto_soccorso.reparto)
       })
     })
-    console.log(this.$data);
-    
   }
 
 }
