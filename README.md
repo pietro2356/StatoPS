@@ -1,27 +1,61 @@
-# StatoPS
+# Stato Pronto Soccorso Trentini
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+Applicazione web per la consultazione dello stato dei pronto soccorsi Trentini.
 
-## Development server
+## Realizzazione
+L'applicazione è realizzata in [Angular](https://angular.io/), con l'ausilio del design Material di Angular [Angular Material](https://angular.io/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Funzionamento
+L'applicazione fornisce una tabella per pronto soccorso in questo modo:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![PSArco](./assets/StatoPSArco.png)
 
-## Build
+Per ogni pronto soccorso viene mostrato:
+* Ospedale - Reparto.
+* Codice reparto.
+* Tabella per la consultazione dei codici.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Come funziona l'accesso ai pronto soccorsi
+Normalmente l'accesso ai pronto soccorsi trentini funziona in questo modo:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Arrivo del paziente(PZ) in pronto soccorso(PS).
+2. Accettazione del PZ da parte dell'infermiera di Triage.
+3. Assegnazione di un codice colore e di un identificativo.
 
-## Running end-to-end tests
+Ora, in base alla lista **d'attesa** e al codice colore ricevuto si dovrà aspettare di essere chiamati dal Medico di PS o dall'infermiera di triage.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Una volta chiamati si entra in **osservazione**, dove vengono eseguiti accertamenti più accurati sulla persona da parte dell'infermiera di triage.
 
-## Further help
+Dopo i vari accertamenti si passa in **ambulatorio** per essere visitati dal medico di PS. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Come leggere la tabella
+Come potete notare nella prima colonna troviamo i vari codici colori, dal più grave ***Rosso***, al meno grave: ***Bianco***.
+
+Le altre colonne si dividono nel seguente modo:
+* Attesa:
+    * Persone che hanno fatto l'accettazione in triage con l'infermiera di turno.
+* Osservazione:
+    * Persone che vengono chiamate dall'infermiera di triage per eseguire una visita più accurata, e identificare il problema.
+* Ambulatorio:
+    * Persone chiamate dal medico di PS o dall'infermiera di ambulatorio per la visita effettiva col medico.
+
+> I tempi di attesa sono molto variabili, in basse alle esigenze di dei singoli.
+
+## Codici colore
+* ***Rosso***:
+    * Visita immediata.
+* ***Arancio***:
+    * Visita con urgenza.
+* ***Azzurro***:
+    * Visita con urgenza differibile.
+* ***Verde***:
+    * Visita urgenza minore.
+* ***Bianco***:
+    * Visita non urgente.
+
+---
+## CORS
